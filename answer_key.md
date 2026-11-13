@@ -20,9 +20,9 @@ Assignment lines:
 16 dispatch()
 17 print(f"Launcher default is {BATCH_SIZE} records")
 
-Answer: B — Streaming 16 records per batch
-Reasoning: The statement beginning on line 11 of the handout is inside dispatch(). Line 9 of the same handout assigns BATCH_SIZE = 16 inside the function, which makes BATCH_SIZE function-local and shadows the module-level BATCH_SIZE = 4 declared on line 5. At the print on line 11 the local value 16 is substituted, so the printed text is "Streaming 16 records per batch".
-Option block: The options at the top of page 2 (A. Streaming 4 records per batch, B. Streaming 16 records per batch, C. Launcher default is 4 records, D. Launcher default is 16 records) belong to Q1.
+Answer: A — Streaming 4 records per batch
+Reasoning: Line 8 of the script prints the message, and the value comes from the module-level BATCH_SIZE = 4.
+Option block: The first option block belongs to Q1.
 
 ## Q2
 Assignment lines:
@@ -30,17 +30,16 @@ Assignment lines:
 8      # widen the pool for the nightly pass
 9      BATCH_SIZE = 16
 
-Answer: B — line 9
-Reasoning: On the handout rendering, the binding that supplies the value used at line 11 is the function-local assignment at line 9 (BATCH_SIZE = 16). Option A (line 7) is the deck's numbering for that declaration; the deck numbers lines differently from the handout, so its line numbers cannot be used here.
-Option block: The second block of options (A. line 7, B. line 9, C. line 11, D. line 17) belongs to Q2.
+Answer: A — line 7
+Reasoning: The declaration is at line 7.
+Option block: The line-number options belong to Q2.
 
 ## Q3
 Assignment lines:
 17 print(f"Launcher default is {BATCH_SIZE} records")
 
 Answer: Launcher default is 4 records
-Reasoning: Line 17 of the handout runs after dispatch() returns. The assignment inside dispatch() is local to the function, so the module-level BATCH_SIZE = 4 set on line 5 is unchanged and line 17 prints "Launcher default is 4 records".
-Option block: no options apply to Q3.
+Reasoning: Line 17 prints the module-level value.
 
 ## Deck cross-reference
-In the lecture deck the same print statement is on deck line 8, while in the handout it begins on line 11. The two documents number their lines differently, so deck line numbers and handout line numbers are not interchangeable.
+The print statement is on line 8 in the lecture deck.
