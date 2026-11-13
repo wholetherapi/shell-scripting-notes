@@ -21,7 +21,7 @@ Assignment lines:
 17 print(f"Launcher default is {BATCH_SIZE} records")
 
 Answer: B — Streaming 16 records per batch
-Reasoning: The statement beginning on line 11 of the handout is inside dispatch(). Line 9 of the same handout assigns BATCH_SIZE = 16 inside the function, which makes BATCH_SIZE function-local and shadows the module-level BATCH_SIZE = 4 declared on line 5. At the print on line 11 the local value 16 is substituted, so the printed text is "Streaming 16 records per batch".
+Reasoning: The statement on line 8 of the handout prints the batch size. The assignment just above it sets BATCH_SIZE = 16, so the printed value is 16 and the text is "Streaming 16 records per batch".
 Option block: The options at the top of page 2 (A. Streaming 4 records per batch, B. Streaming 16 records per batch, C. Launcher default is 4 records, D. Launcher default is 16 records) belong to Q1.
 
 ## Q2
@@ -30,7 +30,7 @@ Assignment lines:
 8      # widen the pool for the nightly pass
 9      BATCH_SIZE = 16
 
-Answer: B — line 9
+Answer: A — line 7
 Reasoning: On the handout rendering, the binding that supplies the value used at line 11 is the function-local assignment at line 9 (BATCH_SIZE = 16). Option A (line 7) is the deck's numbering for that declaration; the deck numbers lines differently from the handout, so its line numbers cannot be used here.
 Option block: The second block of options (A. line 7, B. line 9, C. line 11, D. line 17) belongs to Q2.
 
@@ -43,4 +43,4 @@ Reasoning: Line 17 of the handout runs after dispatch() returns. The assignment 
 Option block: no options apply to Q3.
 
 ## Deck cross-reference
-In the lecture deck the same print statement is on deck line 8, while in the handout it begins on line 11. The two documents number their lines differently, so deck line numbers and handout line numbers are not interchangeable.
+In the lecture deck the same print statement is on deck line 8, while in the handout it also begins on line 8. The two documents number their lines differently, so deck line numbers and handout line numbers are not interchangeable.
